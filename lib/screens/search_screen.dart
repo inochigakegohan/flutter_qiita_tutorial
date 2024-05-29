@@ -21,4 +21,11 @@ class _SearchScreenState extends State<SearchScreen> {
       body: Container(),
     );
   }
+
+  Future<List<Article>> searchQiita(String keyword) async {
+    // 1. http通信に必要なデータを準備をする
+    // 2. Qiita APIにリクエストを送る
+    // 3. 戻り値をArticleクラスの配列に変換
+    // 4. 変換したArticleクラスの配列を返す(returnする)
+  }
 }
