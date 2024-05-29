@@ -24,6 +24,13 @@ class _SearchScreenState extends State<SearchScreen> {
 
   Future<List<Article>> searchQiita(String keyword) async {
     // 1. http通信に必要なデータを準備をする
+    // Uri.https([baseUrl], [Urlパス], Map<String,dynamic>[クエリパラメータ])
+
+    final uri = Uri.https('qiita.com', '/api/v2/items', {
+      'query': 'title:$keyword',
+      'per_page': '10',
+    });
+
     // 2. Qiita APIにリクエストを送る
     // 3. 戻り値をArticleクラスの配列に変換
     // 4. 変換したArticleクラスの配列を返す(returnする)
