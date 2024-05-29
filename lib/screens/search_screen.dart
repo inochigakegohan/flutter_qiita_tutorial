@@ -47,6 +47,8 @@ class _SearchScreenState extends State<SearchScreen> {
     } else {
       return [];
     }
-
+// レスポンスをモデルクラスへ変換
+    final List<dynamic> body = jsonDecode(res.body);
+    return body.map((dynamic json) => Article.fromJson(json)).toList();
   }
 }
