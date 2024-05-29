@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:http/http.dart' as http; // httpという変数を通して、httpパッケージにアクセス
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+import 'package:flutter_qiita_tutorial/models/article.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
