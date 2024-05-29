@@ -18,7 +18,27 @@ class _SearchScreenState extends State<SearchScreen> {
       appBar: AppBar(
         title: const Text('Qiita Search'),
       ),
-      body: Container(),
+      body: Column(
+        children: [
+          //検索ボックス
+          Padding(
+            padding: const EdgeInsets.symmetric(
+              vertical: 12,
+              horizontal: 36,
+            ),
+            child: TextField(
+              style: TextStyle( //Textstyleを渡す
+                 fontSize: 18,
+              color: Colors.black,
+              ),
+              decoration: InputDecoration( // ← InputDecorationを渡す
+                hintText: '検索ワードを入力してください',
+              ),
+            ),
+          ),
+          //検索結果一覧
+        ],
+      ),
     );
   }
 
