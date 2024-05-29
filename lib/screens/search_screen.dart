@@ -36,6 +36,11 @@ class _SearchScreenState extends State<SearchScreen> {
     final String token = dotenv.env['QIITA_ACCESS_TOKEN'] ?? '';
 
     // 3. 戻り値をArticleクラスの配列に変換
+    // アクセストークンを含めてリクエストを送信
+    final http.Response res = await http.get(uri, headers: {
+      'Authorization': 'Bearer $token',
+    });
+
     // 4. 変換したArticleクラスの配列を返す(returnする)
   }
 }
