@@ -42,5 +42,11 @@ class _SearchScreenState extends State<SearchScreen> {
     });
 
     // 4. 変換したArticleクラスの配列を返す(returnする)
+    if (res.statusCode == 200) {
+      // モデルクラスへ変換
+    } else {
+      return [];
+    }
+
   }
 }
