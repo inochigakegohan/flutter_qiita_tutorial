@@ -27,13 +27,18 @@ class _SearchScreenState extends State<SearchScreen> {
               horizontal: 36,
             ),
             child: TextField(
-              style: TextStyle( //Textstyleを渡す
-                 fontSize: 18,
-              color: Colors.black,
+              style: TextStyle(
+                //Textstyleを渡す
+                fontSize: 18,
+                color: Colors.black,
               ),
-              decoration: InputDecoration( // ← InputDecorationを渡す
+              decoration: InputDecoration(
+                // ← InputDecorationを渡す
                 hintText: '検索ワードを入力してください',
               ),
+              onSubmitted: (String value) {
+                print("検索中: $value");
+              },
             ),
           ),
           //検索結果一覧
