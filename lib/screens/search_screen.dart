@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_qiita_tutorial/widgets/article_container.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http; // httpという変数を通して、httpパッケージにアクセス
 import 'package:flutter_dotenv/flutter_dotenv.dart';
@@ -43,7 +44,7 @@ class _SearchScreenState extends State<SearchScreen> {
               },
             ),
           ),
-          //検索結果一覧
+          const ArticleContainer(),//検索結果一覧
         ],
       ),
     );

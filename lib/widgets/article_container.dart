@@ -5,15 +5,21 @@ class ArticleContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric( // ← 内側の余白を指定
-        horizontal: 20,
-        vertical: 16,
+    return Padding(
+      padding: const EdgeInsets.symmetric(
+        vertical: 12,
+        horizontal: 16,
       ),
-      decoration: const BoxDecoration(
-        color: Color(0xFF55C500), // ← 背景色を指定
-        borderRadius: BorderRadius.all(
-          Radius.circular(32),// ← 角丸を設定
+      child: Container(
+        padding: const EdgeInsets.symmetric( // ← 内側の余白を指定
+          horizontal: 20,
+          vertical: 16,
+        ),
+        decoration: const BoxDecoration(
+          color: Color(0xFF55C500), // ← 背景色を指定
+          borderRadius: BorderRadius.all(
+            Radius.circular(32),// ← 角丸を設定
+          ),
         ),
       ),
     );
