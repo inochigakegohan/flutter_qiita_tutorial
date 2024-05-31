@@ -4,6 +4,8 @@ import 'dart:convert';
 import 'package:http/http.dart' as http; // httpという変数を通して、httpパッケージにアクセス
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_qiita_tutorial/models/article.dart';
+import '../models/article.dart';
+import '../models/user.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({super.key});
@@ -40,12 +42,24 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
               onSubmitted: (String value) async {
                 final results = await searchQiita(value); //検索処理を実行す
-                setState(()=> articles = results); //検索結果を代入
+                setState(() => articles = results); //検索結果を代入
               },
             ),
           ),
-          const ArticleContainer(),//検索結果一覧
-        ],
+          ArticleContainer(
+            article: Article(
+              title: 'テスト',
+              user: User(
+                id: 'qii-taro',
+                profileImageUrl:
+                    'https://firebasestorage.googleapis.com/v0/b/gs-expansion-test.appspot.com/o/unknown_person.png?alt=media',
+              ),
+              createdAt: DateTime.now(),
+              tags: ['Flutter', 'dart'],
+              url: 'https://example.com',
+            ),
+          ),
+        ], //検索結果一覧
       ),
     );
   }
