@@ -28,6 +28,9 @@ class ArticleContainer extends StatelessWidget {
             Radius.circular(32), // ← 角丸を設定
           ),
         ),
+        child: const Column(
+          children: [],
+        ),
       ),
     );
   }
