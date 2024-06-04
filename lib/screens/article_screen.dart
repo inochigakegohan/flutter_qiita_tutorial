@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_qiita_tutorial/models/article.dart';
 
 class ArticleScreen extends StatefulWidget {
   const ArticleScreen({
     super.key,
+    required this.article,
   });
+  final Article article;
 
   @override
   State<ArticleScreen> createState() => _ArticleScreenState();
