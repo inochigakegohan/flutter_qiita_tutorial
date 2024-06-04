@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_qiita_tutorial/models/article.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 class ArticleScreen extends StatefulWidget {
   const ArticleScreen({
@@ -13,13 +14,18 @@ class ArticleScreen extends StatefulWidget {
 }
 
 class _ArticleScreenState extends State<ArticleScreen> {
+  late WebViewController controller = WebViewController()
+    ..loadRequest(
+        Uri.parse(widget.article.url),
+    );
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Article Page'),
       ),
-      body: null,
+      body: WebViewWidget(controller: controller),
     );
   }
 }
